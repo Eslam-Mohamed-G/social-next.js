@@ -15,16 +15,16 @@ export default function RootLayout({
         </title>
       </head>
       <body>
-        <div className="flex justify-between">
-        <div className="flex justify-between">
-          <LeftBar />
-        </div>
-        <div className="">
-          {children}
-        </div>
-        <div className="">
-          <RightBar />
-        </div>
+        <div className="max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto flex justify-between">
+          <div className="">
+            <LeftBar />
+          </div>
+          <div className="">
+            {children}
+          </div>
+          <div className="">
+            <RightBar />
+          </div>
         </div>
       </body>
     </html>
