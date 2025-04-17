@@ -5,7 +5,7 @@ import React from "react";
 const menuList = [
   {
     id: 1,
-    name: "HomePage",
+    name: "Home",
     link: "/",
     icon: "home.svg",
   },
@@ -65,13 +65,13 @@ export default function LeftBar() {
       <div className="flex flex-col gap-4 items-center xl:items-start">
         {/* logo */}
         <Link href="/">
-          <img src="icons/logo.svg" alt="logo" className="w-12 h-12" />
+          <Image src="icons/logo.svg" alt="logo" width={24} height={24}/>
         </Link>
 
         {/* menu list */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           {menuList.map((menu) => (
-            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-[#181818]">
+            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-[#181818] rounded-4xl py-3 px-3">
               <img src={`icons/${menu.icon}`} alt={menu.name}  className="w-6 h-6"/>
               <span className="hidden xl:inline text-white">{menu.name}</span>
             </Link>
@@ -86,12 +86,12 @@ export default function LeftBar() {
       </div>
       
       {/* user */}
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 mb-10 py-3 px-3 hover:bg-[#181818] rounded-4xl">
           <div className="w-10 h-10 rounded-full relative">
             <Image src="/img/em.png" alt="em" fill/>
           </div>
 
-          <div className="text-white hidden lg:flex flex-1 justify-between border border-y-amber-400">
+          <div className="text-white hidden lg:flex flex-1 justify-between">
             <div className="flex flex-col">
               <span className="font-bold">eslam</span>
               <span className="text-sm text-gray-400">@eslam_mg</span>
