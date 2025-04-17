@@ -86,7 +86,7 @@ export default function LeftBar() {
       </div>
       
       {/* user */}
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-center gap-2">
           <div className="w-10 h-10 rounded-full relative">
             <Image src="/img/em.png" alt="em" fill/>
           </div>
