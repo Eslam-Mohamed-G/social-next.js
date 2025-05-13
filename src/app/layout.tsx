@@ -14,17 +14,19 @@ export default function RootLayout({
           Social
         </title>
       </head>
-      <body>
+      <body className="bg-black p-0">
+        <div className="bg-black w-full">
         <div className="max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto flex justify-between">
-          <div className="px-2">
+          <div className="">
             <LeftBar />
           </div>
-          <div className="flex-1 lg:min-w-[600px] border-x-[1px] border-iconPink">
+          <div className="flex-1 lg:min-w-[600px] border-x-[1px] border-gray-500">
             {children}
           </div>
           <div className="hidden lg:flex ml-4 md:ml-8">
             <RightBar />
           </div>
+        </div>
         </div>
       </body>
     </html>
