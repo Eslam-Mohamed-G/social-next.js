@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Images from "./Images";
 
 const menuList = [
   {
@@ -68,7 +69,7 @@ export default function LeftBar() {
         <div className="flex flex-col">
           {menuList.map((menu) => (
             <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-[#181818] rounded-3xl py-3 px-3 md:px-5">
-              <Image src={`icons/${menu.icon}`} alt={menu.name} width={24} height={24}/>
+              <Images path={`icons/${menu.icon}`} alt={menu.name} w={24} h={24}/>
               <span className="hidden xl:inline text-white">{menu.name}</span>
             </Link>
           ))}
@@ -76,15 +77,15 @@ export default function LeftBar() {
 
         {/* button */}
         <Link href="/" className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center xl:hidden">
-          <Image src="icons/post.svg" alt="new post" width={24} height={24}/>
+          <Images path="icons/post.svg" alt="new post" w={24} h={24}/>
         </Link>
         <Link href="/" className="hidden xl:block bg-white text-black rounded-full font-bold py-2 px-20">post</Link>
       </div>
       
       {/* user */}
         <div className="flex items-center justify-center gap-2 mb-10 py-3 px-2 md:px-5 hover:bg-[#181818] rounded-4xl">
-          <div className="w-10 h-10 rounded-full relative">
-            <Image src="/img/em.png" alt="em" fill/>
+          <div className="rounded-full relative">
+            <Images path="general/em.png" alt="em" w={40} h={40}/>
           </div>
 
           <div className="text-white hidden lg:flex flex-1 justify-between">

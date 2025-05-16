@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@imagekit/next": "^2.1.2",
     "autoprefixer": "^10.4.21",
     "next": "15.3.0",
     "postcss": "^8.5.3",
