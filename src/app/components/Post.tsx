@@ -1,5 +1,6 @@
 import React from 'react'
 import Images from './Images'
+import PostInfo from './PostInfo'
 
 export default function Post() {
     return (
@@ -28,6 +29,7 @@ export default function Post() {
                     {/* top */}
                     <div className=''>
                         <div className=''></div>
+                        <PostInfo/>
                     </div>
                 </div>
             </div>
