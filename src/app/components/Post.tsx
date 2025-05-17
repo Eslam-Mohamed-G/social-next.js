@@ -1,6 +1,7 @@
 import React from 'react'
 import Images from './Images'
 import PostInfo from './PostInfo'
+import PostInteractions from './PostInteractions'
 
 export default function Post() {
     return (
@@ -29,7 +30,7 @@ export default function Post() {
                         <PostInfo />
                     </div>
                     {/* text * media */}
-                    <div className='text-white'>
+                    <div className='text-white flex flex-col gap-2'>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum odio exercitationem?</p>
                         <Images
                             path="general/Screenshot (292).png"
@@ -39,10 +40,9 @@ export default function Post() {
                             className=""
                         />
                     </div>
+                <PostInteractions/>
                 </div>
             </div>
-
-            post
         </div>
     )
 };
