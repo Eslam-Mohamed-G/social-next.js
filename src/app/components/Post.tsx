@@ -9,13 +9,6 @@ export default function Post() {
             <div className='flex items-center gap-2 text-gray-400 font-bold'>
                 icon
                 <span>lama</span>
-                <Images
-                    path="general/Screenshot (292).png"
-                    w={600}
-                    h={600}
-                    alt="screen"
-                    className=""
-                />
             </div>
             {/* post content */}
             <div className='flex gap-4'>
@@ -25,11 +18,26 @@ export default function Post() {
                 </div>
 
                 {/* content */}
-                <div className=''>
+                <div className='flex-1 flex flex-col gap-2'>
                     {/* top */}
-                    <div className=''>
-                        <div className=''></div>
-                        <PostInfo/>
+                    <div className='flex items-center justify-between gap-2 text-gray-400'>
+                        <div className='flex items-center gap-2 flex-wrap'>
+                            <h1 className='text-2xl font-bold'>eslam</h1>
+                            <span className='text-[#71767b]'>@esl</span>
+                            <span className='text-[#71767b]'>1 day</span>
+                        </div>
+                        <PostInfo />
+                    </div>
+                    {/* text * media */}
+                    <div className='text-white'>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum odio exercitationem?</p>
+                        <Images
+                            path="general/Screenshot (292).png"
+                            w={600}
+                            h={600}
+                            alt="screen"
+                            className=""
+                        />
                     </div>
                 </div>
             </div>
