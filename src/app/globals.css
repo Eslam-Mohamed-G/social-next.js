@@ -1,2 +1,20 @@
 @import "tailwindcss";
 
+@theme{
+    --color-iconBlue: #1d9bf0;
+    /* --color-iconBlue: oklch(80.9% 0.105 251.813); */
+    --color-iconGreen: #00ba7c;
+    --color-iconPink: #f91880;
+    --color-textGray: #71767b;
+    --color-textGrayLight: #e7e9ea;
+    --color-borderGray: #2f3336;
+    --color-inputGray: #202327;
+
+
+    --breakpoint-xsm: 500px;
+    --breakpoint-sm: 600px;
+    --breakpoint-md: 690px;
+    --breakpoint-lg: 988px;
+    --breakpoint-xl: 1078px;
+    --breakpoint-xxl: 1265px;
+}
