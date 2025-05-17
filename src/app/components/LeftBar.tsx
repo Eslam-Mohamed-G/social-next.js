@@ -68,7 +68,7 @@ export default function LeftBar() {
         {/* menu list */}
         <div className="flex flex-col">
           {menuList.map((menu) => (
-            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-[#181818] rounded-3xl py-3 px-3 md:px-5">
+            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-hoverBackGround rounded-3xl py-3 px-3 md:px-5">
               <Images path={`icons/${menu.icon}`} alt={menu.name} w={24} h={24}/>
               <span className="hidden xl:inline text-white">{menu.name}</span>
             </Link>
@@ -83,7 +83,7 @@ export default function LeftBar() {
       </div>
       
       {/* user */}
-        <div className="flex items-center justify-center gap-2 mb-10 py-3 px-2 md:px-5 hover:bg-[#181818] rounded-4xl">
+        <div className="flex items-center justify-center gap-2 mb-10 py-3 px-2 md:px-5 hover:bg-hoverBackGround rounded-4xl">
           <div className="rounded-full relative">
             <Images path="general/em.png" alt="em" w={40} h={40}/>
           </div>
@@ -91,7 +91,7 @@ export default function LeftBar() {
           <div className="text-white hidden lg:flex flex-1 justify-between">
             <div className="flex flex-col">
               <span className="font-bold">eslam</span>
-              <span className="text-sm text-gray-400">@eslam_mg</span>
+              <span className="text-sm text-textGray">@eslam_mg</span>
             </div>
 
             <div className=""> <span>...</span></div>

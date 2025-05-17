@@ -5,9 +5,9 @@ import PostInteractions from './PostInteractions'
 
 export default function Post() {
     return (
-        <div className='p-4 border-y-1 border-gray-500'>
+        <div className='p-4 border-y-1 border-borderGray'>
             {/* post */}
-            <div className='flex items-center gap-2 text-gray-400 font-bold'>
+            <div className='flex items-center gap-2 text-textGray font-bold'>
                 icon
                 <span>lama</span>
             </div>
@@ -21,11 +21,11 @@ export default function Post() {
                 {/* content */}
                 <div className='flex-1 flex flex-col gap-2'>
                     {/* top */}
-                    <div className='flex items-center justify-between gap-2 text-gray-400'>
+                    <div className='flex items-center justify-between gap-2 text-textGray'>
                         <div className='flex items-center gap-2 flex-wrap'>
                             <h1 className='text-2xl font-bold'>eslam</h1>
-                            <span className='text-[#71767b]'>@esl</span>
-                            <span className='text-[#71767b]'>1 day</span>
+                            <span className='text-textGray'>@esl</span>
+                            <span className='text-textGray'>1 day</span>
                         </div>
                         <PostInfo />
                     </div>
@@ -37,7 +37,7 @@ export default function Post() {
                             w={600}
                             h={600}
                             alt="screen"
-                            className=""
+                            className="w-full"
                         />
                     </div>
                 <PostInteractions/>
