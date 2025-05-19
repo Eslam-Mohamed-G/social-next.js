@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Images from './Images';
 import { shareAction } from '@/action';
+import ImageFromNext from 'next/image';
 
 const Share = () => {
     const [media, setMedia] = useState<File | null>(null);
@@ -10,6 +11,8 @@ const Share = () => {
             setMedia(e.target.files[0])
         };
     }
+
+    const previewURL = media ? URL.createObjectURL(media) : null;
     return (
         <form className='flex gap-4 p-4' action={shareAction}>
             {/* avatar */}
@@ -21,6 +24,11 @@ const Share = () => {
             <div className='flex-1 flex flex-col gap-4'>
                 <input type="text" name="desc" placeholder='what’s happening?' className='bg-transparent text-white dark:text-white text-2xl border-0 border-b-2 border-borderGray w-full focus:outline-none focus:ring-0 focus:border-borderGray placeholder:text-textGray py-2' />
 
+                {
+                    previewURL && <div className='relative rounded-xl w-fit overflow-hidden'>
+                        <ImageFromNext src={previewURL} alt='image' width={300} height={300}/>
+                    </div>
+                }
                 {/* content */}
                 <div className='flex justify-between items-center'>
                     {/* icons */}
