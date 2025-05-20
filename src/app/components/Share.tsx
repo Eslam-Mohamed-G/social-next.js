@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Images from './Images';
 import { shareAction } from '@/action';
 import ImageFromNext from 'next/image';
+import ImageEditor from './ImageEditor';
 
 const Share = () => {
     const [media, setMedia] = useState<File | null>(null);
@@ -11,6 +12,12 @@ const Share = () => {
             setMedia(e.target.files[0])
         };
     }
+
+    const [isEditeOpen, setIsEditeOpen] = useState(false);
+    const [settings, setSettings] = useState<{type:"original"|"wide"|"square"; sensitive: boolean;}>({
+        type:"original",
+        sensitive: false,
+    });
 
     const previewURL = media ? URL.createObjectURL(media) : null;
     return (
@@ -25,10 +32,21 @@ const Share = () => {
                 <input type="text" name="desc" placeholder='what’s happening?' className='bg-transparent text-white dark:text-white text-2xl border-0 border-b-2 border-borderGray w-full focus:outline-none focus:ring-0 focus:border-borderGray placeholder:text-textGray py-2' />
 
                 {
-                    previewURL && <div className='relative rounded-xl w-fit overflow-hidden'>
+                    previewURL && 
+                    <div className='relative rounded-xl w-fit overflow-hidden'>
                         <ImageFromNext src={previewURL} alt='image' width={300} height={300}/>
+                        <div className='absolute top-2 left-2 bg-black/40 text-white py-1 px-4 rounded-full font-bold text-sm cursor-pointer'>edit</div>
                     </div>
                 }
+
+                { isEditeOpen && previewURL && (
+                    <ImageEditor 
+                        onClose= {()=> setIsEditeOpen(false)} 
+                        previewUrl={previewURL}
+                        settings = {settings}
+                        setSettings={setSettings}
+                    />
+                )}
                 {/* content */}
                 <div className='flex justify-between items-center'>
                     {/* icons */}
