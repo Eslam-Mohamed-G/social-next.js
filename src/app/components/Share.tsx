@@ -14,8 +14,8 @@ const Share = () => {
     }
 
     const [isEditeOpen, setIsEditeOpen] = useState(false);
-    const [settings, setSettings] = useState<{type:"original"|"wide"|"square"; sensitive: boolean;}>({
-        type:"original",
+    const [settings, setSettings] = useState<{ type: "original" | "wide" | "square"; sensitive: boolean; }>({
+        type: "original",
         sensitive: false,
     });
 
@@ -32,18 +32,18 @@ const Share = () => {
                 <input type="text" name="desc" placeholder='what’s happening?' className='bg-transparent text-white dark:text-white text-2xl border-0 border-b-2 border-borderGray w-full focus:outline-none focus:ring-0 focus:border-borderGray placeholder:text-textGray py-2' />
 
                 {
-                    previewURL && 
+                    previewURL &&
                     <div className='relative rounded-xl w-fit overflow-hidden'>
-                        <ImageFromNext src={previewURL} alt='image' width={300} height={300}/>
-                        <div className='absolute top-2 left-2 bg-black/40 text-white py-1 px-4 rounded-full font-bold text-sm cursor-pointer'>edit</div>
+                        <ImageFromNext src={previewURL} alt='image' width={300} height={300} />
+                        <div className='absolute top-2 left-2 bg-black/40 text-white py-1 px-4 rounded-full font-bold text-sm cursor-pointer' onClick={() => setIsEditeOpen(true)}>edit</div>
                     </div>
                 }
 
-                { isEditeOpen && previewURL && (
-                    <ImageEditor 
-                        onClose= {()=> setIsEditeOpen(false)} 
-                        previewUrl={previewURL}
-                        settings = {settings}
+                {isEditeOpen && previewURL && (
+                    <ImageEditor
+                        onClose={() => setIsEditeOpen(false)}
+                        previewURL={previewURL}
+                        settings={settings}
                         setSettings={setSettings}
                     />
                 )}
