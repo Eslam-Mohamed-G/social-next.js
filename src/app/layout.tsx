@@ -14,8 +14,8 @@ export default function RootLayout({
           Social
         </title>
       </head>
-      <body className="bg-black p-0">
-        <div className="bg-black w-full">
+      <body className="p-0 dark:bg-black">
+        <div className="w-full">
         <div className="max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto flex justify-between">
           <div className="">
             <LeftBar />

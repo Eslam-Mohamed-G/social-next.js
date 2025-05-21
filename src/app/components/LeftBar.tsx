@@ -77,23 +77,28 @@ export default function LeftBar() {
         {/* menu list */}
         <div className="flex flex-col">
           {menuList.map((menu) => (
-            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-hoverBackGround rounded-3xl py-3 px-3 md:px-5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-textGrayLight dark:hover:bg-hoverBackGround rounded-full py-3 px-3 xl:px-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
                   d={menu.d}
                   className="fill-black dark:fill-white"
                 />
               </svg>
-              <span className="hidden xl:inline text-white">{menu.name}</span>
+              <span className="hidden xl:inline text-black dark:text-white">{menu.name}</span>
             </Link>
           ))}
         </div>
 
-        {/* button */}
-        <Link href="/" className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center xl:hidden">
-          <Images path="icons/post.svg" alt="new post" w={24} h={24}/>
+        {/* button post */}
+        <Link href="/" className="bg-black dark:bg-white flex items-center justify-center rounded-full p-3 xl:w-full font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="lg:hidden">
+            <path
+            className="fill-white dark:fill-black"
+              d="M23 3c-6.62-.1-10.38 2.421-13.05 6.03C7.29 12.61 6 17.331 6 22h2c0-1.007.07-2.012.19-3H12c4.1 0 7.48-3.082 7.94-7.054C22.79 10.147 23.17 6.359 23 3zm-7 8h-1.5v2H16c.63-.016 1.2-.08 1.72-.188C16.95 15.24 14.68 17 12 17H8.55c.57-2.512 1.57-4.851 3-6.78 2.16-2.912 5.29-4.911 9.45-5.187C20.95 8.079 19.9 11 16 11zM4 9V6H1V4h3V1h2v3h3v2H6v3H4z"
+            />
+          </svg>
+          <span className="hidden xl:inline text-white dark:text-black capitalize">post</span>
         </Link>
-        <Link href="/" className="hidden xl:block bg-white text-black rounded-full font-bold py-2 px-20">post</Link>
       </div>
       
       {/* user */}
