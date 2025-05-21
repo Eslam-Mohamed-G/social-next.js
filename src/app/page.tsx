@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="">
       <main className="">
-        <div className="flex justify-between text-textGray font-bold border-b-[1px] border-borderGray px-4 pt-4">
+        <div className="flex justify-around text-textGray font-bold border-b-[1px] border-borderGray px-4 pt-4">
           <Link href="/" className="pb-3 flex items-center border-b-4 border-blue-400 capitalize">for you</Link>
           <Link href="/" className="pb-3 flex items-center capitalize">following</Link>
         </div>

@@ -64,7 +64,7 @@ const Share = () => {
                         <Images path='icons/schedule.svg' alt='schedule' w={20} h={20} className='cursor-pointer' />
                         <Images path='icons/location.svg' alt='location' w={20} h={20} className='cursor-pointer' />
                     </div>
-                    <button type='submit' className='bg-textGray rounded-full px-3 py-1 md:px-4 md:py-2 font-bold cursor-pointer flex items-center capitalize'>post</button>
+                    <button type='submit' className='bg-textGray text-white rounded-full px-3 py-1 md:px-4 md:py-2 font-bold cursor-pointer flex items-center capitalize'>post</button>
                 </div>
             </div>
         </form>
