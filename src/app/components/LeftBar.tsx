@@ -102,18 +102,18 @@ export default function LeftBar() {
       </div>
       
       {/* user */}
-        <div className="flex items-center justify-center gap-2 mb-10 py-3 px-2 md:px-5 hover:bg-hoverBackGround rounded-4xl">
+        <div className="flex items-center justify-center gap-2 mb-10 py-3 px-2 md:px-5 hover:bg-textGrayLight dark:hover:bg-hoverBackGround rounded-4xl">
           <div className="rounded-full relative">
             <Images path="general/em.png" alt="em" w={40} h={40}/>
           </div>
 
           <div className="text-white hidden lg:flex flex-1 justify-between">
             <div className="flex flex-col">
-              <span className="font-bold">eslam</span>
+              <span className="font-bold text-black dark:text-white">eslam</span>
               <span className="text-sm text-textGray">@eslam_mg</span>
             </div>
 
-            <div className=""> <span>...</span></div>
+            <div className=""> <span className="text-black dark:text-white">...</span></div>
           </div>
         </div>
     </div>
