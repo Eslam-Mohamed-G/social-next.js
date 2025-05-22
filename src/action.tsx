@@ -7,12 +7,14 @@ const imageKit = new ImageKit({
     privateKey: process.env.PRIVATE_KEY!
 });
 
-export const shareAction = async (formData: FormData) => {
+export const shareAction = async (formData: FormData, settings:{type:"original" | "wide" | "square"; sensitive: boolean}) => {
     const file = formData.get("file") as File;
     const desc = formData.get("desc") as string;
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+
+    const transformation = `w-600, ${settings.type === "square" ? "ar-1-1": settings.type === "wide" ? "ar-16-9" : ""}`
 
     imageKit.upload(
         {
@@ -20,7 +22,7 @@ export const shareAction = async (formData: FormData) => {
             fileName: file.name,
             folder: "/posts",
             transformation: {
-                pre: "w-600"
+                pre: transformation
             }
         },
         function (error, result) {

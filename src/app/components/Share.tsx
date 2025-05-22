@@ -21,7 +21,7 @@ const Share = () => {
 
     const previewURL = media ? URL.createObjectURL(media) : null;
     return (
-        <form className='flex gap-2 md:gap-4 py-2 px-2 md:px-4 border-b-1 border-textGrayLight dark:border-borderGray' action={shareAction}>
+        <form className='flex gap-2 md:gap-4 py-2 px-2 md:px-4 border-b-1 border-textGrayLight dark:border-borderGray' action={(formData) => shareAction(formData, settings)}>
             {/* avatar */}
             <div className='relative w-10 h-10 rounded-full overflow-hidden'>
                 <Images path='general/em.png' w={100} h={100} alt='logo' />
