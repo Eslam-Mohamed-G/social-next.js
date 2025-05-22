@@ -5,7 +5,7 @@ import PostInteractions from './PostInteractions'
 
 export default function Post() {
     return (
-        <div className='p-2 md:p-4 border-b-1 border-borderGray'>
+        <div className='p-2 md:p-4 border-b-1 border-textGrayLight dark:border-borderGray'>
             {/* post content */}
             <div className='flex gap-2 md:gap-4'>
                 {/* avatar */}
