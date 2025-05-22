@@ -32,7 +32,9 @@ const ImageEditor = ({ onClose, previewURL, settings, setSettings }: {
                         <h1 className='font-bold text-xl text-white'>Media Settings</h1>
                     </div>
 
-                    <button className='bg-white py-2 px-4 rounded-full text-black font-bold cursor-pointer'>Save</button>
+                    <button className='bg-white py-2 px-4 rounded-full text-black font-bold cursor-pointer' onClick={onClose}>
+                        Save
+                    </button>
                 </div>
 
                 {/* image container */}

@@ -34,7 +34,14 @@ const Share = () => {
                 {
                     previewURL &&
                     <div className='relative rounded-xl w-fit overflow-hidden'>
-                        <ImageFromNext src={previewURL} alt='image' width={300} height={300} />
+                        <ImageFromNext src={previewURL} alt='image' width={300} height={300}
+                            className={`w-full ${settings.type === "original"
+                                ? "h-full object-contain"
+                                : settings.type === "square"
+                                    ? "aspect-square object-cover"
+                                    : "aspect-video object-cover"
+                                }`}
+                        />
                         <div className='absolute top-2 left-2 bg-black/40 text-white py-1 px-4 rounded-full font-bold text-sm cursor-pointer' onClick={() => setIsEditeOpen(true)}>edit</div>
                     </div>
                 }
