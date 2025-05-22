@@ -21,15 +21,15 @@ const Share = () => {
 
     const previewURL = media ? URL.createObjectURL(media) : null;
     return (
-        <form className='flex gap-4 p-4' action={shareAction}>
+        <form className='flex gap-2 md:gap-4 py-2 px-2 md:px-4 border-b-1 border-borderGray' action={shareAction}>
             {/* avatar */}
             <div className='relative w-10 h-10 rounded-full overflow-hidden'>
                 <Images path='general/em.png' w={100} h={100} alt='logo' />
             </div>
 
             {/* inputs */}
-            <div className='flex-1 flex flex-col gap-4'>
-                <input type="text" name="desc" placeholder='what’s happening?' className='bg-transparent text-white dark:text-white text-2xl border-0 border-b-2 border-borderGray w-full focus:outline-none focus:ring-0 focus:border-borderGray placeholder:text-textGray py-2' />
+            <div className='flex-1 flex flex-col gap-2'>
+                <input type="text" name="desc" placeholder='what’s happening?' className='bg-transparent text-black dark:text-white text-2xl border-0 border-b-1 border-borderGray w-full focus:outline-none focus:ring-0 focus:border-borderGray placeholder:text-textGray py-2' />
 
                 {
                     previewURL &&

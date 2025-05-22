@@ -5,14 +5,9 @@ import PostInteractions from './PostInteractions'
 
 export default function Post() {
     return (
-        <div className='p-4 border-y-1 border-borderGray'>
-            {/* post */}
-            <div className='flex items-center gap-2 text-textGray font-bold'>
-                icon
-                <span>lama</span>
-            </div>
+        <div className='p-2 md:p-4 border-b-1 border-borderGray'>
             {/* post content */}
-            <div className='flex gap-4'>
+            <div className='flex gap-2 md:gap-4'>
                 {/* avatar */}
                 <div className='relative w-10 h-10 rounded-full overflow-hidden'>
                     <Images path='general/em.png' alt='avatar' w={40} h={40} />
@@ -30,7 +25,7 @@ export default function Post() {
                         <PostInfo />
                     </div>
                     {/* text * media */}
-                    <div className='text-white flex flex-col gap-2'>
+                    <div className='text-black dark:text-white flex flex-col gap-2'>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum odio exercitationem?</p>
                         <Images
                             path="general/Screenshot (292).png"
