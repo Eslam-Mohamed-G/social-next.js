@@ -23,6 +23,9 @@ export const shareAction = async (formData: FormData, settings:{type:"original" 
             folder: "/posts",
             transformation: {
                 pre: transformation
+            },
+            customMetadata: {
+                sensitive: settings.sensitive,
             }
         },
         function (error, result) {
