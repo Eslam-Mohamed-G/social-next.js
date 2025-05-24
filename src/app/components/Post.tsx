@@ -2,8 +2,31 @@ import React from 'react'
 import Images from './Images'
 import PostInfo from './PostInfo'
 import PostInteractions from './PostInteractions'
+import { imageKit } from './utils';
 
-export default function Post() {
+interface fileDetailsResponse {
+    width: number;
+    height: number;
+    filePath: string;
+    url: string;
+    fileType: string;
+    CustomMetadata?: { sensitive: boolean };
+}
+
+const Post = async () => {
+
+    const getFileDetails = async (fileId: string): Promise<fileDetailsResponse> => {
+        return new Promise((resolve, reject) => {
+            imageKit.getFileDetails(fileId, function (error, result) {
+                if (error) console.log(error);
+                else resolve(result as fileDetailsResponse);
+            });
+        })
+    };
+
+    const fileDetails = await getFileDetails("68322623432c476416fa4e64");
+    console.log(fileDetails);
+
     return (
         <div className='p-2 md:p-4 border-b-1 border-textGrayLight dark:border-borderGray'>
             {/* post content */}
@@ -27,17 +50,21 @@ export default function Post() {
                     {/* text * media */}
                     <div className='text-black dark:text-white flex flex-col gap-2'>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum odio exercitationem?</p>
-                        <Images
+                        {/* <Images
                             path="general/Screenshot (292).png"
                             w={600}
                             h={600}
                             alt="screen"
                             className="w-full"
-                        />
+                        /> */}
+
+                        { fileDetails && (<Images path={fileDetails.filePath} alt='' w={fileDetails.width} h={fileDetails.height} className={fileDetails.CustomMetadata?.sensitive ?"blur-lg": ""}/>)}
                     </div>
-                <PostInteractions/>
+                    <PostInteractions/>
                 </div>
             </div>
         </div>
     )
 };
+
+export default Post;

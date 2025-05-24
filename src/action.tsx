@@ -1,11 +1,6 @@
 "use server"
-import ImageKit from "imagekit";
 
-const imageKit = new ImageKit({
-    publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY!,
-    urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT!,
-    privateKey: process.env.PRIVATE_KEY!
-});
+import { imageKit } from "./app/components/utils";
 
 export const shareAction = async (formData: FormData, settings:{type:"original" | "wide" | "square"; sensitive: boolean}) => {
     const file = formData.get("file") as File;
