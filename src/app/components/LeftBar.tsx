@@ -1,6 +1,6 @@
-import Image from "next/image";
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Images from "./Images";
 
 const menuList = [
@@ -70,6 +70,29 @@ const menuList = [
 ];
 
 export default function LeftBar() {
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = darkMode ? "light" : "dark";
+    setDarkMode(!darkMode);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    console.log(darkMode);
+    
+  };
+
   return (
     <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-0 px-0 md:px-5">
       <div className="flex flex-col gap-4 items-center xl:items-start">
@@ -103,7 +126,7 @@ export default function LeftBar() {
 
       {/* user */}
       <div className="flex items-center justify-center gap-2 mb-10 py-3 px-3 hover:bg-textGrayLight dark:hover:bg-hoverBackGround rounded-4xl">
-        <div className="rounded-full relative">
+        <div className="rounded-full relative" onClick={toggleTheme}>
           <Images path="general/em.png" alt="em" w={40} h={40} />
         </div>
 
