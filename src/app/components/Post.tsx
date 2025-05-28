@@ -49,18 +49,21 @@ const Post = async () => {
                     </div>
                     {/* text * media */}
                     <div className='text-black dark:text-white flex flex-col gap-2'>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum odio exercitationem?</p>
-                        {/* <Images
-                            path="general/Screenshot (292).png"
-                            w={600}
-                            h={600}
-                            alt="screen"
-                            className="w-full"
-                        /> */}
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab
+                            delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum
+                            odio exercitationem?</p>
+                        {/*
+                    <Images path="general/Screenshot (292).png" w={600} h={600} alt="screen" className="w-full" /> */}
 
-                        { fileDetails && (<Images path={fileDetails.filePath} alt='' w={fileDetails.width} h={fileDetails.height} className={fileDetails.CustomMetadata?.sensitive ?"blur-lg": ""}/>)}
+                        {fileDetails && (
+                            <Images path={fileDetails.filePath} alt='' 
+                                w={fileDetails.width} 
+                                h={fileDetails.height}
+                                className={fileDetails.CustomMetadata?.sensitive ? "blur-lg" : ""} 
+                            />)
+                        }
                     </div>
-                    <PostInteractions/>
+                    <PostInteractions />
                 </div>
             </div>
         </div>
