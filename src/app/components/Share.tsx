@@ -32,7 +32,7 @@ const Share = () => {
                 <input type="text" name="desc" placeholder='what’s happening?' className='bg-transparent text-black dark:text-white text-2xl border-0 border-b-1 border-textGrayLight dark:border-borderGray w-full focus:outline-none focus:ring-0 focus:border-textGrayLight dark:focus:border-borderGray placeholder:text-textGray py-2' />
 
                 {
-                    previewURL &&
+                    media?.type.includes("image") && previewURL &&
                     <div className='relative rounded-xl w-fit overflow-hidden'>
                         <ImageFromNext src={previewURL} alt='image' width={300} height={300}
                             className={`w-full ${settings.type === "original"
@@ -60,7 +60,7 @@ const Share = () => {
                     <div className='flex gap-3 md:gap-4'>
                         {/* upload images */}
                         <div className=''>
-                            <input type="file" name="file" id="file" className='hidden' onChange={handleMediaChange} />
+                            <input type="file" name="file" id="file" accept='image/*,video/*' className='hidden' onChange={handleMediaChange} />
                             <label htmlFor="file">
                                 <Images path='icons/image.svg' alt='image' w={20} h={20} className='cursor-pointer' />
                             </label>
