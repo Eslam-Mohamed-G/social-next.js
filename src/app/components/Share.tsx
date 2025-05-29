@@ -50,7 +50,7 @@ const Share = () => {
                     media?.type.includes("video") && previewURL && 
                     (<div className='relative'>
                         <video src={previewURL} controls/>
-                        <div className='absolute top-2 right-2 bg-black/50 text-white h-8 w-8 flex items-center justify-center rounded-full cursor-pointer' onClick={()=>setMedia(null)}>X</div>
+                        <button className='absolute top-2 right-2 bg-black/50 text-white h-8 w-8 flex items-center justify-center rounded-full cursor-pointer' onClick={()=>setMedia(null)}>X</button>
                     </div>)
                 }
 
