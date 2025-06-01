@@ -3,6 +3,7 @@ import Images from './Images'
 import PostInfo from './PostInfo'
 import PostInteractions from './PostInteractions'
 import { imageKit } from './utils';
+import Video from './Video';
 
 interface fileDetailsResponse {
     width: number;
@@ -55,12 +56,18 @@ const Post = async () => {
                         {/*
                     <Images path="general/Screenshot (292).png" w={600} h={600} alt="screen" className="w-full" /> */}
 
-                        {fileDetails && (
-                            <Images path={fileDetails.filePath} alt='' 
-                                w={fileDetails.width} 
+                        {fileDetails && fileDetails.fileType === "image"
+                            ?
+                            <Images path={fileDetails.filePath} alt=''
+                                w={fileDetails.width}
                                 h={fileDetails.height}
-                                className={fileDetails.CustomMetadata?.sensitive ? "blur-lg" : ""} 
-                            />)
+                                className={fileDetails.CustomMetadata?.sensitive ? "blur-lg" : ""}
+                            />
+                            :
+                            <Video
+                                path={fileDetails.filePath}
+                                className={fileDetails.CustomMetadata?.sensitive ? "blur-lg" : ""}
+                            />
                         }
                     </div>
                     <PostInteractions />
