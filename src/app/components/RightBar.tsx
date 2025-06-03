@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+import Search from './Search';
+import Recommendations from './Recommendations';
+import PopularTags from './PopularTags';
 
-export default function RightBar() {
+const RightBar = () => {
   return (
     <div>
-      rightbar
+      <Search/>
+      <PopularTags/>
+      <Recommendations/>
+      <div className=''>
+        
+      </div>
     </div>
-  )
+  );
 }
+
+export default RightBar;
+
