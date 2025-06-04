@@ -5,11 +5,11 @@ import PopularTags from './PopularTags';
 
 const RightBar = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-4 sticky top-0 h-max'>
       <Search/>
       <PopularTags/>
       <Recommendations/>
-      <div className=''>
+      <div className='text-textGray text-sm flex gap-x-4 flex-wrap'>
         
       </div>
     </div>
