@@ -21,9 +21,11 @@ const Images = ({ path, w, h, alt, className, tr }: ImageType) => {
             <Image
                 urlEndpoint={urLEndpoint}
                 src={path}
+                width={w}
+                height={h}
                 {...(tr
-                    ? { transformation: [{ width: `${w}`, height: `${h}` }] }
-                    : { width: w, height: h })
+                    ? { transformation: [{ width: w, height: h }] }
+                    : {})
                 }
                 alt={alt}
                 className={className}
