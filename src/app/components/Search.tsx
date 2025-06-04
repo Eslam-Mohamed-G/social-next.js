@@ -10,7 +10,7 @@ const Search = () => {
                     className='fill-black dark:fill-white'
                 />
             </svg>
-            <input type="text" placeholder='search' className='bg-transparent flex-1 outline-none placeholder:text-textGray border border-red-500 content-center h-full' />
+            <input type="text" placeholder='search' className='bg-transparent flex-1 outline-none placeholder:text-textGray content-center h-full' />
         </div>
     );
 }
