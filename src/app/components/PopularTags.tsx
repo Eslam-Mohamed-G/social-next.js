@@ -19,7 +19,7 @@ const PopularTags = () => {
             {/* topics */}
             <div className=''>
                 <div className='flex items-center justify-between'>
-                    <span>technology * trending</span>
+                    <span className='text-textGray font-semibold'>technology * trending</span>
                 </div>
             </div>
         </div>
