@@ -94,13 +94,13 @@ export default function LeftBar() {
   };
 
   return (
-    <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-0 px-0 md:px-5">
-      <div className="flex flex-col gap-4 items-center xl:items-start">
+    <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-0 px-2 xxl:w-3xs">
+      <div className="flex flex-col gap-4 pr-8 items-center xl:items-start">
 
         {/* menu list */}
         <div className="flex flex-col">
           {menuList.map((menu) => (
-            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-textGrayLight dark:hover:bg-hoverBackGround rounded-full py-3 px-3 xl:px-5">
+            <Link href={menu.link} key={menu.id} className="flex items-center gap-3 hover:bg-textGrayLight dark:hover:bg-hoverBackGround rounded-full py-3 px-3 xl:px-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
                   d={menu.d}
