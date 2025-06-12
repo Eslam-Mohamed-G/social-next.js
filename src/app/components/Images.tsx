@@ -23,10 +23,7 @@ const Images = ({ path, w, h, alt, className, tr }: ImageType) => {
                 src={path}
                 width={w}
                 height={h}
-                {...(tr
-                    ? { transformation: [{ width: w, height: h }] }
-                    : {})
-                }
+                transformation={tr? [{ width: w, height: h }]: []}
                 alt={alt}
                 className={className}
             />
