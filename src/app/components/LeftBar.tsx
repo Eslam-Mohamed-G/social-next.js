@@ -95,7 +95,7 @@ export default function LeftBar() {
 
   return (
     <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-0 px-2 xxl:w-3xs">
-      <div className="flex flex-col gap-4 pr-8 items-center xl:items-start">
+      <div className="flex flex-col gap-4 items-center xl:items-start">
 
         {/* menu list */}
         <div className="flex flex-col">
