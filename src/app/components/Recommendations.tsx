@@ -17,7 +17,7 @@ const Recommendations = () => {
                             <h1 className='text-md font-bold dark:text-textGrayLight'>john doe</h1>
                             <span className='text-textGray text-sm'>@johonDoe</span>
                         </div>
-                        <button className='bg-black dark:bg-white rounded-2xl capitalize font-bold text-textGrayLight dark:text-black h-fit px-4 py-1'>
+                        <button className='bg-black dark:bg-white rounded-2xl capitalize font-semibold text-textGrayLight dark:text-black h-fit px-4 py-1'>
                             follow
                         </button>
                     </div>
@@ -32,7 +32,7 @@ const Recommendations = () => {
                             <h1 className='text-md font-bold dark:text-textGrayLight'>john doe</h1>
                             <span className='text-textGray text-sm'>@johonDoe</span>
                         </div>
-                        <button className='bg-black dark:bg-white rounded-2xl capitalize font-bold text-textGrayLight dark:text-black h-fit px-4 py-1'>
+                        <button className='bg-black dark:bg-white rounded-2xl capitalize font-semibold text-textGrayLight dark:text-black h-fit px-4 py-1'>
                             follow
                         </button>
                     </div>
