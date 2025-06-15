@@ -71,7 +71,7 @@ const UserPage = () => {
                             </div>
                         ))}
 
-                        <button className='rounded-full py-2 px-5 capitalize font-bold bg-black text-white dark:bg-white dark:text-black'>
+                        <button className='rounded-full py-1 px-5 capitalize font-bold bg-black text-white dark:bg-white dark:text-black'>
                             follow
                         </button>
                     </div>
