@@ -58,8 +58,8 @@ const UserPage = () => {
                     </div>
                 </div>
 
-                <div className='absolute end-3 translate-y-3'>
-                    <div className='flex flex-row gap-2 items-center content-center'>
+                <div className='absolute translate-x-6 translate-y-14 xsm:end-9 xsm:translate-y-3'>
+                    <div className='flex flex-row flex-wrap gap-2 items-center content-center'>
                         {menuList.map(icon => (
                             <div className='w-9 h-9 flex items-center justify-center rounded-full cursor-pointer border-1 border-textGray hover:bg-textGrayLight transition-all delay-25' key={icon.id}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className='rounded-full'>
