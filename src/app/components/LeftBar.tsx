@@ -113,7 +113,7 @@ export default function LeftBar() {
         </div>
 
         {/* button post */}
-        <Link href="/" className="bg-black dark:bg-white flex items-center justify-center rounded-full p-3 xxl:w-full font-bold mx-auto">
+        <Link href="/compose/post" className="bg-black dark:bg-white flex items-center justify-center rounded-full p-3 xxl:w-full font-bold mx-auto">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="xxl:hidden">
             <path
               className="fill-white dark:fill-black"
