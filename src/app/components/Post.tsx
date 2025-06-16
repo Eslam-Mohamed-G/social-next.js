@@ -5,6 +5,7 @@ import PostInteractions from './PostInteractions'
 import { imageKit } from './utils';
 import Video from './Video';
 import Comments from './Comments';
+import Link from 'next/link';
 
 interface fileDetailsResponse {
     width: number;
@@ -15,7 +16,7 @@ interface fileDetailsResponse {
     CustomMetadata?: { sensitive: boolean };
 }
 
-const Post = async () => {
+const Post = async ({ type }: { type?: "status" | "comment" }) => {
 
     const getFileDetails = async (fileId: string): Promise<fileDetailsResponse> => {
         return new Promise((resolve, reject) => {
@@ -34,24 +35,29 @@ const Post = async () => {
             {/* post content */}
             <div className='flex gap-2 md:gap-4 p-2 md:p-4'>
                 {/* avatar */}
-                <div className='relative w-10 h-10 rounded-full overflow-hidden'>
+                <div className={`${type === "status" && "hidden"} relative w-10 h-10 rounded-full overflow-hidden`}>
                     <Images path='general/em.png' alt='avatar' w={40} h={40} />
                 </div>
 
                 {/* content */}
-                <div className='flex-1 flex flex-col gap-2'>
+                <div className={`flex-1 flex flex-col gap-2 ${type === "status" && "px-2"}`}>
                     {/* top */}
-                    <div className='flex items-center justify-between gap-2 text-textGray'>
-                        <div className='flex items-center gap-2 flex-wrap'>
-                            <h1 className='text-2xl font-bold'>eslam</h1>
-                            <span className='text-textGray'>@esl</span>
-                            <span className='text-textGray'>1 day</span>
-                        </div>
+                    <div className='flex items-center justify-between w-full'>
+                        <Link href={`/test`} className='flex gap-2'>
+                            <div className={`${type !== "status" && "hidden"} relative w-10 h-10 rounded-full overflow-hidden`}>
+                                <Images path='general/em.png' alt='avatar' w={40} h={40} />
+                            </div>
+                            <div className={`flex ${type ==="status" && "flex-col gap-0 items-start justify-center leading-none"} items-center gap-1 flex-wrap`}>
+                                <span className='font-bold'>eslam</span>
+                                <span className={`text-textGray ${type ==="status" && "text-sm"}`}>@esl</span>
+                                { type !=="status" &&(<span className='text-textGray'>1 day</span>)}
+                            </div>
+                        </Link>
                         <PostInfo />
                     </div>
                     {/* text * media */}
                     <div className='text-black dark:text-white flex flex-col gap-2'>
-                        <p>
+                        <p className={`${type === "status" &&"text-lg"}`}>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quia ipsum sit velit, vel ab
                             delectus ipsam, corrupti ratione ad voluptatibus corporis! Ea earum harum fuga incidunt laborum
                             odio exercitationem?
@@ -71,6 +77,7 @@ const Post = async () => {
                                 />
                             }
                         </div>
+                        {type === "status" && <span className='text-textGray text-sm'>8:41 pm . dec 5, 2025</span>}
                     </div>
                     <PostInteractions />
                 </div>

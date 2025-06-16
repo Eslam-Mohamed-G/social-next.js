@@ -17,7 +17,7 @@ const StatusPage = () => {
                 </Link>
                 <h1 className='font-bold text-lg dark:text-textGrayLight'>Post</h1>
             </div>
-            <Post/>
+            <Post type="status"/>
             <Comments/>
             <Post/>
         </div>
