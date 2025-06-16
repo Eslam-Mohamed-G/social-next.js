@@ -1,13 +1,20 @@
+"use client"
 import Images from '@/app/components/Images';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const PostModal = () => {
+
+    const router = useRouter();
+    const closeModal = ()=>{
+        router.back()
+    };
     return (
         <div className='fixed top-0 left-0 end-0 bottom-0 z-20 bg-textGray/55 flex justify-center'>
             <div className='bg-white dark:bg-black w-screen md:w-[600px] h-screen md:h-max md:rounded-xl mt-0 md:mt-12 p-2 pb-0'>
                 {/* top */}
                 <div className='text-black dark:text-white flex flex-row justify-items-center justify-between'>
-                    <button className='dark:text-white text-black cursor-pointer w-8 h-8 rounded-full hover:bg-textGray/25'>X</button>
+                    <button onClick={closeModal} className='dark:text-white text-black cursor-pointer w-8 h-8 rounded-full hover:bg-textGray/25'>X</button>
                     <button className='rounded-full px-4 hover:bg-iconBlue/15 cursor-pointer transition-all delay-75 text-iconBlue'>Drafts</button>
                 </div>
                 {/* center */}
