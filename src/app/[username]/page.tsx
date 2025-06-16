@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Images from '../components/Images';
+import Feed from '../components/Feed';
 
 const menuList = [
     {
@@ -29,61 +30,90 @@ const menuList = [
 const UserPage = () => {
     return (
         <div className=''>
-            {/* title */}
-            <div className='flex items-center gap-8 sticky top-0 backdrop-blur-sm px-4 py-2 z-10 bg-white/95 dark:bg-black/75'>
-                <Link href="/" className='rounded-full p-2 hover:bg-textGrayLight dark:hover:bg-textGray transition-all delay-25'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                        <path
-                            d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"
-                            className="fill-black dark:fill-white"
-                        />
-                    </svg>
-                </Link>
-                <h1 className='font-bold text-lg dark:text-textGrayLight'>Eslam</h1>
-            </div>
+            <div className='pb-3 border-b-1 border-textGrayLight dark:border-borderGray'>
+                {/* title */}
+                <div className='flex items-center gap-8 sticky top-0 backdrop-blur-sm px-4 py-2 z-10 bg-white/95 dark:bg-black/75'>
+                    <Link href="/" className='rounded-full p-2 hover:bg-textGrayLight dark:hover:bg-textGray transition-all delay-25'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path
+                                d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"
+                                className="fill-black dark:fill-white"
+                            />
+                        </svg>
+                    </Link>
+                    <h1 className='font-bold text-lg dark:text-textGrayLight'>Eslam</h1>
+                </div>
 
-            {/* info */}
-            <div className='relative'>
-                {/* cover avatar container */}
+                {/* info */}
                 <div className='relative'>
-                    {/* cover img */}
-                    <div className='w-full'>
-                        <Images path='general/sunset.jpg' alt='' w={700} h={210} tr={true} className='hidden xl:block' />
-                        <Images path='general/sunset.jpg' alt='' w={700} h={260} tr={true} className='block xl:hidden' />
+                    {/* cover avatar container */}
+                    <div className='relative'>
+                        {/* cover img */}
+                        <div className='w-full'>
+                            <Images path='general/sunset.jpg' alt='' w={700} h={210} tr={true} className='hidden xl:block' />
+                            <Images path='general/sunset.jpg' alt='' w={700} h={260} tr={true} className='block xl:hidden' />
+                        </div>
+
+                        {/* avatar */}
+                        <div className='w-1/3 xsm:w-1/5 aspect-square rounded-full overflow-hidden border-4 border-white dark:border-black bg-gray-300 absolute left-4 -translate-y-1/2'>
+                            <Images path='general/photo.jpg' alt='' w={200} h={200} tr={false} />
+                        </div>
                     </div>
 
-                    {/* avatar */}
-                    <div className='w-1/3 xsm:w-1/5 aspect-square rounded-full overflow-hidden border-4 border-white dark:border-black bg-gray-300 absolute left-4 -translate-y-1/2'>
-                        <Images path='general/photo.jpg' alt='' w={200} h={200} tr={false} />
+                    <div className='absolute translate-x-6 translate-y-14 xsm:end-9 xsm:translate-y-3'>
+                        <div className='flex flex-row flex-wrap gap-2 items-center content-center'>
+                            {menuList.map(icon => (
+                                <div className='w-9 h-9 flex items-center justify-center rounded-full cursor-pointer border-1 border-textGray hover:bg-textGrayLight transition-all delay-25' key={icon.id}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className='rounded-full'>
+                                        <path
+                                            className="fill-black dark:fill-white transition-all delay-50"
+                                            d={icon.d}
+                                        />
+                                    </svg>
+                                </div>
+                            ))}
+
+                            <button className='rounded-full py-1 px-5 capitalize font-bold bg-black text-white dark:bg-white dark:text-black'>
+                                follow
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div className='absolute translate-x-6 translate-y-14 xsm:end-9 xsm:translate-y-3'>
-                    <div className='flex flex-row flex-wrap gap-2 items-center content-center'>
-                        {menuList.map(icon => (
-                            <div className='w-9 h-9 flex items-center justify-center rounded-full cursor-pointer border-1 border-textGray hover:bg-textGrayLight transition-all delay-25' key={icon.id}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className='rounded-full'>
-                                    <path
-                                        className="fill-black dark:fill-white transition-all delay-50"
-                                        d={icon.d}
-                                    />
-                                </svg>
-                            </div>
-                        ))}
+                {/* user info */}
+                <div className='flex flex-col gap-4 px-6 mt-24 xsm:mt-20'>
+                    {/* userName */}
+                    <div className='flex flex-col'>
+                        <span className="font-bold text-black dark:text-white">eslam</span>
+                        <span className="text-sm text-textGray">@eslam_mg</span>
+                    </div>
+                    <p className='text-black dark:text-textGrayLight text-[15px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, autem.</p>
 
-                        <button className='rounded-full py-1 px-5 capitalize font-bold bg-black text-white dark:bg-white dark:text-black'>
-                            follow
-                        </button>
+                    {/* job location date */}
+                    <div className='flex gap-4 text-textGray text-[15px]'>
+                        <div className='flex items-center gap-1'>
+                            <Images path='icons/date.svg' alt='date' w={20} h={20} />
+                            <span>joined may 2021</span>
+                        </div>
+                    </div>
+
+                    {/* following */}
+                    <div className='flex gap-4'>
+                        <div className='flex items-center gap-1'>
+                            <span className='font-bold text-black dark:text-white'>85</span>
+                            <span className='text-textGray text-[15px]'>Following</span>
+                        </div>
+
+                        <div className='flex items-center gap-1'>
+                            <span className='font-bold text-black dark:text-white'>100</span>
+                            <span className='text-textGray text-[15px]'>Followers</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* user info */}
-            <div className='flex flex-col px-6 mt-24 xsm:mt-20'>
-                {/* userName */}
-                <span className="font-bold text-black dark:text-white">eslam</span>
-                <span className="text-sm text-textGray">@eslam_mg</span>
-            </div>
+            {/* feed */}
+            <Feed />
         </div>
     );
 }
