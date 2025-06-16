@@ -77,6 +77,13 @@ const UserPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* user info */}
+            <div className='flex flex-col px-6 mt-24 xsm:mt-20'>
+                {/* userName */}
+                <span className="font-bold text-black dark:text-white">eslam</span>
+                <span className="text-sm text-textGray">@eslam_mg</span>
+            </div>
         </div>
     );
 }
