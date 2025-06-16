@@ -4,6 +4,7 @@ import PostInfo from './PostInfo'
 import PostInteractions from './PostInteractions'
 import { imageKit } from './utils';
 import Video from './Video';
+import Comments from './Comments';
 
 interface fileDetailsResponse {
     width: number;
@@ -29,9 +30,9 @@ const Post = async () => {
     console.log(fileDetails);
 
     return (
-        <div className='p-2 md:p-4 border-b-1 border-textGrayLight dark:border-borderGray'>
+        <div className='border-b-1 border-textGrayLight dark:border-borderGray'>
             {/* post content */}
-            <div className='flex gap-2 md:gap-4'>
+            <div className='flex gap-2 md:gap-4 p-2 md:p-4'>
                 {/* avatar */}
                 <div className='relative w-10 h-10 rounded-full overflow-hidden'>
                     <Images path='general/em.png' alt='avatar' w={40} h={40} />
